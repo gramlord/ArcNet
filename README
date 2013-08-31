@@ -1,4 +1,5 @@
-ArcNet is an nRF24L01+ based network for Arduino.
+ArcNet is an nRF24L01+ based network library for Arduinos featuring
+dynamic routing, auto-rejoining and self-healing with up to 254 nodes.
 
 This can be used as the basis for an application that requires many
 Arduinos to exchange data, such as in a sensor network.
@@ -20,7 +21,7 @@ Features include:
   - Message payload up to 27 bytes.
   - Unreliable message transfer, in the style of UDP.
 
-ArcNet is currently in devlopment with most of these features
+ArcNet is currently under devlopment with most of these features
 implemented and tested. Expect to see the first release soon.
 
 Here's what's required:
@@ -32,7 +33,7 @@ Here's what's required:
   - Software:
     - the ArcNet library, of course
     - the RF24 library by Maniacal Bits. Brilliant library, BTW.
-    - the ArcSched library, by yours truely
+    - the ArcSched library, by yours truly
     - the ArcLed library
     - the ArcButton library
   - To this you add your sensors to each Arduino, and add your software
@@ -40,10 +41,10 @@ Here's what's required:
     you use ArcSched to initiate any timing-related functions, such as
     regularly checking your sensors.
 
-Future functionality that may or may not be implemented:
+Planned functionality:
   - A reliable message transfer mechanism.
   - Ability for nodes to go to sleep to save power.
-  - Radio channel hoopping and scanning.
+  - Radio channel hopping and scanning.
   - Port all the Arc* libraries to the Raspberry Pi. The Pi
     can then be a node on the network, even the Root Node.
 
