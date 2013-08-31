@@ -1,0 +1,50 @@
+ArcNet is an nRF24L01+ based network for Arduino.
+
+This can be used as the basis for an application that requires many
+Arduino servers to communicate data, such as a sensor network.
+
+Features include:
+  - Up to 254 nodes in a network.
+  - Network topology is a tree structure, but is not constrained
+    by the nRF24L01+ 6-pipe limit.
+  - One special node, node 0 or the Root Node, is the administrative
+    centre for the network and performs tasks such as node number
+    assignment and pairing to the network, node joining and routing changes.
+  - Dynamic routing so a node may join the network at any
+    location within the tree, and may at any time leave and rejoin
+    in another location. This means network breaks through loss of,
+    or interference to, radio signal is gracefully handled automatically.
+  - Node-to-node communications, no matter where the nodes are on
+    the network.
+  - Broadcast messages.
+  - Message payload up to 27 bytes.
+  - Unreliable message transfer, in the style of UDP.
+
+ArcNet is currently in devlopment with most of these features have been
+implemented and tested. Expect to see the first release soon.
+
+Here's what's required:
+  - On each Arduino, dedicated to ArcNet:
+    - an nRF24L01+ radio
+    - a led
+    - a button
+    - 64 bytes of EEPROM space
+  - Software:
+    - the ArcNet library, of course
+    - the RF24 library by Maniacal Bits. Brilliant library, BTW.
+    - the ArcSched library, by yours truely
+    - the ArcLed library
+    - the ArcButton library
+  - To this you add your sensors to each Arduino, and add your software
+    that uses ArcNet's message sending and receiving functions. I'd suggest
+    you use ArcSched to initiate any timing-related funcitons, such as
+    to regularly check your sensors.
+
+Future functionality that may or may not be implemented:
+  - A reliable message transfer mechanism.
+  - Ability of nodes to go to sleep to save power.
+  - Radio channel hoopping and scanning.
+  - Port all the Arc* libraries to the Raspberry Pi. The Pi
+    can then be a node on the network, even the Root Node.
+
+Graeme Elsworthy, Sep 2013.
