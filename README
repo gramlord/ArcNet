@@ -47,5 +47,7 @@ Planned functionality:
   - Radio channel hopping and scanning.
   - Port all the Arc* libraries to the Raspberry Pi. The Pi
     can then be a node on the network, even the Root Node.
+  - Neighbourhood discovery, where each node scans for all nodes it
+    can reach directly. Optional, as this may not suit all networks.
 
 Graeme Elsworthy, Sep 2013.
